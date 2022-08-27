@@ -28,14 +28,17 @@ public class SendMessagePage extends BasePage{
     @FindBy(xpath = "//div[@class='controls']//button[text()='Надіслати']")
     public WebElement sendButton;
 
+    @FindBy(xpath = "//iframe[@id='mce_0_ifr']")
+    public WebElement iframe;
+
     public void typeSubject(){
         subjectField.sendKeys("Home_task");
     }
 
     public void fillContentField(){
-       Actions action = new Actions(driver);
-       action.clickAndHold(contentOfLetter)
-               .sendKeys("homerwork_is_done");
+        driver.switchTo().frame(iframe);
+        contentOfLetter.sendKeys("homerwork_is_done");
+        driver.switchTo().defaultContent();
     }
 
     public void typeReceiver(){

@@ -30,7 +30,7 @@ public class HomeTask {
     public EmailPage getEmailPage(){ return new EmailPage(getDriver()); }
 
     public SendMessagePage getSendMessagePage(){ return new SendMessagePage(getDriver());}
-
+    
     public void closeDriver(){
         driver.quit();
     }
@@ -49,6 +49,7 @@ public class HomeTask {
         getSendMessagePage().typeReceiver();
         getSendMessagePage().typeSubject();
         getSendMessagePage().fillContentField();
+        getSendMessagePage().waitSubmitButtonIsClickable();
         getSendMessagePage().clickOnSendButton();
         getSendMessagePage().waitForSendingMessage();
         closeDriver();

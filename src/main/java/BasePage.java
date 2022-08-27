@@ -38,5 +38,10 @@ public class BasePage {
                 .until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//div[@class='sendmsg__ads-ready']")));
     }
 
+    public void waitSubmitButtonIsClickable(){
+        new WebDriverWait(driver,Duration.ofSeconds(TIME))
+                .until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='controls']//button[text()='Надіслати']")));
+    }
+
     }
 
