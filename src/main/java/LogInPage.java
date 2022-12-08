@@ -21,7 +21,7 @@ public class LogInPage extends BasePage{
         passwordField.sendKeys("123456789epam");
     }
 
-    @FindBy(xpath = "//button[contains(@class, 'WiMj')]")
+    @FindBy(xpath = "//button[@type='submit']")
     public WebElement submitButton;
 
     public void clickOnSubmitButton(){
